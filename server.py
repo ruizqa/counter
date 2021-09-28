@@ -18,7 +18,7 @@ def visits():
     
     return render_template("index.html")
 
-@app.route('/destroy_session')         
+@app.route('/destroy')         
 def destroy():
     session.pop('visits', None)
     session.pop('counter',None)

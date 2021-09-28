@@ -9,29 +9,54 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     </head>
     <body class="bg-secondary my-5 py-5">
-        <section class="row d-flex justify-content-center">
-            <div class="container mx-5 px-5 text-center horizontal-center bg-secondary" style="width:30%" >
-                <p class="fs-1 bg-secondary text-white">Counter</p>
-                <div class="row d-flex justify-content-center my-3 bg-secondary">
-                    <button class="col btn-success mx-5 p-1"><a class="link-light text-decoration-none" href = "{{url_for('add2')}}">Add two visits </a></button>
-                    <button class="col btn-danger mx-5 p-1 "> <a class="link-light text-decoration-none" href = "{{url_for('destroy')}}">Reset</a></button>
-                </div>
-                <form action='/checkout' method='post' class= "bg-secondary my-3 row d-flex justify-content-between">
-                    <label for="name" class="col text-white">Increase counter by:</label>
-                    <input type="number" name="number" class="col mx-2">
-                    <input type="submit" class="col mx-2">
-                </form>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+            <div class="container">
+              <a href="#" class="navbar-brand">Coding Dojo Web Dev Bootcamp</a>
+            </div>
+        </nav>
 
-                <div class="row d-flex align-items-center my-3 bg-secondary text-white">
-                    <div class="col fs-3">Counter:</div> 
-                    <div class="col fs-5">{{session['visits'] + session['counter']}}</div>
-                    <div class="col fs-3 text-nowrap">Actual visits:</div>
-                    <div class="col fs-5">{{session['visits']}}</div>
+        <section class="py-4"></section>
+
+        <section>
+
+            <div class="container">
+                <div class="col-md-8 offset-md-2 bg-primary text-center">
+                    <p class="fs-1 text-white">Counter</p>
+                    <div class="bg-white text-dark text-center m-auto py-2">
+                        <div class="row align-items-center">
+                            <div class="col fs-3">Counter:</div> 
+                            <div class="col fs-5">{{session['visits'] + session['counter']}}</div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col fs-3 text-nowrap">Actual visits:</div>
+                            <div class="col fs-5">{{session['visits']}}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row g-1 bg-white m-auto py-2 px-0">
+                        <a class="fs-5 col-lg-4 offset-lg-1 btn btn-success" href = "/add2">Add two visits </a>
+                        <a class="fs-5 col-lg-4 offset-lg-2 btn btn-danger" href = "/destroy">Reset</a>
+                    </div>
+                    <div class="row bg-dark m-auto py-4">
+                        <form action='/checkout' method='post' class="row">
+                            <label for="name" class="fs-5 col-lg-4 offset-lg-1 text-white">Increase counter by:</label>
+                            <input type="number" name="number" class="fs-5 col-lg-2 offset-lg-2">
+                            <input type="submit" class="btn btn-primary fs-5 col-lg-2">
+                        </form>
+                    </div>
                 </div>
+                
 
             </div>
         </section>
-            
+
+
+        <footer class="col-12 p-1 bg-dark text-white text-center position-fixed bottom-0">
+            <div class="container">
+              <p class="lead">Core Assignment</p>
+            </div>
+          </footer>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         
     </body>
